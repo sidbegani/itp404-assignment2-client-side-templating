@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Assignment 2</title>
+  <link rel="stylesheet" href="hw1.css">
+</head>
+
+<body>
+
+<h1>Assigment 2 Search Form</h1>
+
+
+<form id="searchform" action = "" method ="GET">
+  <input type="text" id = "inputterm" name="inputterm" placeholder="Search the Reddit">
+  <input type="submit" value="Submit" id="submitbutton">
+</form>
+
+
+<div id="results"></div>
+<div class="loader">Loading...</div>
+<template id = "reddit-loader">
+	{{#each reddits}}
+		<div>
+		<a href="{{data.url}}">Title: {{data.title}}</a>
+		<p>Score: {{data.score}}</p>
+		<p>Author: {{data.author}}</p>
+		<p>Subscribers: {{number-comma data.subreddit_subscribers}}</p>
+		<p>
+		{{#if data.num_comments}}
+		Number of Comments: {{number-comma data.num_comments}}
+		{{else}}
+		No Comments
+		{{/if}}
+		</p>
+
+		<hr>
+		</div>
+	{{/each}}
+</template>
+
+<script src="handlebars-v4.1.2.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="hw1js.js"></script>
+<script src="moment.js"></script>
+<script src="purify.min.js"></script>
+
+</body>
+
+</html>
