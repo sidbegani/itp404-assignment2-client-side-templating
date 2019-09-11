@@ -22,7 +22,7 @@
 <template id = "reddit-loader">
 	{{#each reddits}}
 		<div>
-		<a href="{{data.url}}">Title: {{data.title}}</a>
+		<a href="{{data.url}}" target = "_blank">Title: {{data.title}}</a>
 		<p>Score: {{data.score}}</p>
 		<p>Author: {{data.author}}</p>
 		<p>Subscribers: {{number-comma data.subreddit_subscribers}}</p>
